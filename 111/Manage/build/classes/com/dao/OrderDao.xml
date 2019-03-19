@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.OrderDao">
+
+	<select id="selectAllCoach" resultType="Coach">
+		select * from coach
+	</select>
+	<select id="selectAllShoppingCar" resultType="ShoppingCar">
+		select * from shoppingcar
+	</select>
+	<delete id="deleteCoach" parameterType="Integer">
+		delete from coach where coachid=#{coachid}
+	</delete>
+	<select id="selectAllEp" resultType="Equipment">
+		select * from equipment
+	</select>
+	<delete id="deleteEquipment" parameterType="Integer">
+		delete from equipment where epid=#{epid}
+	</delete>
+	<delete id="deleteShopcar" parameterType="String">
+		delete from shoppingcar where shopcarname=#{shopcarname}
+	</delete>
+	<delete id="deOneShoppingCar" parameterType="String">
+		delete from shoppingcar where shopcarname=#{shopcarname}
+	</delete>
+	<select id="selectAllMessage" resultType="Message">
+		select *
+		from message
+	</select>
+	<insert id="insertAllMessage">
+		insert into message(messageboard,messageusername)
+		values(#{messageboard},#{messageusername})
+	</insert>
+	<select id="selectOneCoach" resultType="Coach" parameterType="Integer">
+		select *
+		from coach
+		where coachid=#{coachid}
+	</select>
+	<insert id="insertShopcarByCoach" parameterType="Coach">
+		insert into
+		shoppingcar(shopcarid,shopcarname,shopcarprice,shopcarimgpath,sign)
+		values(#{coachid},#{coachname},#{coachprice},#{coachimgpath},#{sign})
+	</insert>
+	<select id="selectOneEp" resultType="Equipment" parameterType="Integer">
+		select *
+		from equipment
+		where epid=#{epid}
+	</select>
+	<insert id="insertShopcarByEp" parameterType="Equipment">
+		insert into
+		shoppingcar(shopcarid,shopcarname,shopcarprice,shopcarimgpath,sign)
+		values(#{epid},#{epname},#{epprice},#{epimgpath},#{sign})
+	</insert>
+
+
+	<select id="selectOneMessage" resultType="Message"
+		parameterType="Integer">
+		select *
+		from message
+		where messageid=#{messageid}
+	</select>
+	
+	<select id="selectOneShoppingCar" parameterType="String" resultType="ShoppingCar">
+		select * 
+		from shoppingcar
+		where shopcarname=#{shopcarname}
+	</select>
+</mapper>

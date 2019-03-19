@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>产品追溯</title>
+</head>
+<body>
+<div style="margin-left:340px;margin-top:50px">
+<font size="6"><strong>产品追溯</strong></font>
+<button onclick="table4()" type="submit"
+ style="width:150px;height:50px"><font size="5">用户管理</font></button>
+<script type="text/javascript">
+function table4(){
+	window.location.href='http://127.0.0.1:8080/demo/table.html';
+}
+</script>
+<button onclick="table5()" type="submit"
+ style="width:150px;height:50px"><font size="5">肉牛管理</font></button>
+<script type="text/javascript">
+function table5(){
+	window.location.href='http://127.0.0.1:8080/demo/table2.html';
+}
+</script>
+</div>
+<div style="margin-top:100px">
+<table border="1" align="center" cellspacing="0" style="width:1100px;height:80px;font-size:24px;">
+<tr>
+<td colspan="9" align="center">产品追溯号:<input type="text"  align="center" placeholder="请输入产品追溯号" style="width:200px;height:20px;">
+<button>查询</button></td>
+</tr>
+<tr>
+<td>ID</td>
+<td>年龄/月</td>
+<td>地点</td>
+<td>环境</td>
+<td>体重/kg</td>
+<td>体宽/mm</td>
+<td>体长/mm</td>
+<td>体高/mm</td>
+<td>出场时间</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>8</td>
+<td>汤原县</td>
+<td>圈养</td>
+<td>350</td>
+<td>100</td>
+<td>145</td>
+<td>142</td>
+<td>2018/11/2</td>
+</tr>
+</table>
+</div>
+</body>

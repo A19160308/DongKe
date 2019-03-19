@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 别名 -->
+	<typeAliases>
+		<package name="com.beans" />
+	</typeAliases>
+
+	<!-- Sql映射文件的位置 -->
+	<mappers>
+		<!-- name:sql映射文件所在的包名 package使用的要求： 1）sql映射文件名和Dao接口名一样。 2）sql映射文件和Dao接口要在同一目录 -->
+		<package name="com.dao" />
+	</mappers>
+</configuration>

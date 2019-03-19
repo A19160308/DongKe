@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.teaDao">
+
+
+	<select id="getTeaByName" resultType="tea_Message" parameterType="tea_Message">
+		select *
+		from tea_Message
+		where tea_name= #{tea_name}
+	</select>
+	<select id="judgeNullRecord" resultType="record" parameterType="record">
+		select *
+		from record
+		where stu_id=#{stu_id} and plant_id=#{plant_id}
+	</select>
+
+	<select id="checkTeaPasswd" resultType="tea_Message" parameterType="tea_Message">
+		select tea_name,tea_password
+		from tea_Message
+		where tea_name=#{tea_name} and tea_password=#{tea_password}
+	</select>
+	<select id="getRecord" resultType="record" parameterType="record">
+		select *
+		from record
+		where stu_id=#{stu_id} 
+	</select>
+	<select id="selectAllTea" resultType="tea_Message">
+		select * from tea_message
+
+	</select> 
+	<insert id="addNewTea" parameterType="tea_Message">
+		insert into tea_message(tea_name,tea_password) values(#{tea_name},#{tea_password})
+	</insert> 
+	
+	
+	<update id="setRecordFlag" parameterType="record">
+	update record set record_flag=#{record_flag} where stu_id=#{stu_id} and plant_id=#{plant_id} 
+	</update>
+	
+	
+	<update id="updateRecord" parameterType="record">
+	update record set score=#{score},score_text=#{score_text},final_flag=#{final_flag} where stu_id=#{stu_id} and plant_id=#{plant_id} 
+	</update>
+	
+	
+	<insert id="setRecord" parameterType="record">
+		insert into record(stu_id,plant_id,score,score_text,final_flag) values(#{stu_id},#{plant_id},#{score},#{score_text},#{final_flag})
+	</insert> 
+	<insert id="insertRecord" parameterType="record">
+		insert into record(stu_id,plant_id,record_flag) values(#{stu_id},#{plant_id},#{record_flag})
+	</insert> 
+	<delete id="deletetea" parameterType="integer">
+		delete from tea_message where tea_id=#{tea_id}
+	</delete>
+	<update id="editTea" parameterType="tea_Message">
+	update tea_message set tea_name=#{tea_name},tea_password=#{tea_password} where tea_id=#{tea_id}
+	</update>
+	
+	<select id="allPlant" resultType="plant_Message">
+		select * 
+		from plant_message
+	</select> 
+	<select id="getPlantByName"  parameterType="plant_Message" resultType="plant_Message">
+		select * 
+		from plant_message
+		where plant_id=#{plant_id} and plant_name=#{plant_name} 
+	</select>
+	<!-- <insert id="setPlantScore" parameterType="plant_Message">
+		insert into plant_message(plant_score) values(#{plant_score})
+	</insert> -->
+	<update id="setPlantScore" parameterType="plant_Message">
+	update plant_message set plant_score=#{plant_score}, plant_text=#{plant_text}, plant_final=#{plant_final} where plant_id=#{plant_id}
+	</update>
+	<update id="setFlagDemo" parameterType="plant_Message">
+	update plant_message set plant_flag=#{plant_flag} where plant_id=#{plant_id}
+	</update>
+
+<!-- 	<insert id="addNewUser" parameterType="Users">
+		insert into users(username,userpasswd) values(#{username},#{userpasswd})
+	</insert>
+
+	<select id="selectAllUsers" resultType="Users">
+		select * from users
+
+	</select>  -->
+
+</mapper>

@@ -1,0 +1,59 @@
+@charset "utf-8";
+#filter{        
+    border:0;  
+    padding:30;  
+    margin:10;  
+    font-family:Arial, Helvetica, sans-serif;  
+    font-size:20px;  
+    }  
+      
+#province,#department,#level{  
+    display:block;  
+    }  
+  
+#main{  
+    width:500px;  
+    height:500px;  
+    }  
+      
+.leibie{                  
+    font-size:20px;  
+    font-weight:400;  
+    }  
+      
+.common{  
+    font-size:24px;  
+    margin-left:20px;  
+    margin-right:20px;         
+    }  
+      
+ #filter a{  
+    color:#666666;  
+    text-decoration:none;  
+    }  
+      
+#filter a:hover{  
+    background-color:#4598d2;  
+    }  
+  
+.bgColor{  
+    background-color:#4598d2;  
+    } 
+#province_result,#department_result,#level_result{
+	color:red;
+	width:auto;
+}  
+ table, tr {
+      border: solid 1px lightblue;
+      align:left;
+    }
+
+    
+    
+.hasBeenSelected{border:#b2d1ff 1px solid;padding:2px;width:auto;margin-top:10px;overflow:hidden;margin-left:30px;margin-right:30px;}
+.hasBeenSelected dl{width:auto;background:#f6f8fd;overflow:hidden}
+.hasBeenSelected dl dt{float:left}
+.hasBeenSelected dl dd{float:left}
+.hasBeenSelected dl dt{text-align:right;line-height:30px;width:108px;height:30px;font-weight:600}
+.hasBeenSelected dl dd{padding-bottom:4px;padding-left:0px;width:840px;padding-right:0px;padding-top:0px}
+.hasBeenSelected dl td{float:left;text-align:right;line-height:30px;width:108px;height:30px;font-weight:600}  

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.stuDao">
+
+
+	<select id="getStuByName" resultType="stu_Message" parameterType="stu_Message">
+		select *
+		from stu_Message
+		where stu_name= #{stu_name}
+	</select>
+	
+	<select id="getID" resultType="int" parameterType="stu_Message">
+		select stu_id
+		from stu_Message
+		where stu_name= #{stu_name} and stu_password=#{stu_password}
+	</select>
+		
+	<select id="checkStuPasswd" resultType="stu_Message" parameterType="stu_Message">
+		select stu_name,stu_password
+		from stu_Message
+		where stu_name=#{stu_name} and stu_password=#{stu_password}
+	</select>
+
+ 	<insert id="addNewStu" parameterType="stu_Message">
+		insert into stu_message(stu_name,stu_password) values(#{stu_name},#{stu_password})
+	</insert> 
+	
+	<insert id="insertRecord" parameterType="stu_Message">
+		insert into score_record(stu_name) values(#{stu_name})
+	</insert> 
+	
+	<select id="selectAllStu" resultType="stu_Message">
+		select * from stu_message
+
+	</select> 
+	<delete id="deletestu" parameterType="integer">
+		delete from stu_message where stu_id=#{stu_id}
+	</delete>
+	<update id="updateStu" parameterType="stu_Message">
+	update stu_message set stu_name=#{stu_name},stu_password=#{stu_password},stu_score=#{stu_score} where stu_id=#{stu_id}
+	</update>
+</mapper>

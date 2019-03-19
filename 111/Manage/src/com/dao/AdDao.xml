@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.AdDao">
+
+
+	<select id="getAdByName" resultType="Administrator"
+		parameterType="Administrator">
+		select *
+		from Administrator
+		where adname= #{adname}
+	</select>
+
+
+	<select id="checkAdPassword" resultType="Administrator"
+		parameterType="Administrator">
+		select adname,adpasswd
+		from Administrator
+		where adname=#{adname} and adpasswd=#{adpasswd}
+	</select>
+
+
+
+	<select id="selectAllUsers" resultType="Users">
+		select * from users
+	</select>
+
+	<delete id="deleteUsers" parameterType="Integer">
+		delete from users where userid=#{userid}
+	</delete>
+
+
+	<insert id="addNewCoach" parameterType="Coach">
+		insert into coach(coachname,coachprice,coachimgpath)
+		values(#{coachname},#{coachprice},#{coachimgpath})
+	</insert>
+	<insert id="addNewEp" parameterType="equipment">
+		insert into equipment(epname,epprice,epimgpath)
+		values(#{epname},#{epprice},#{epimgpath})
+	</insert>
+
+	<delete id="deleteMessage" parameterType="Integer">
+		delete from message where messageid=#{messageid}
+	</delete>
+	<update id="modifyMessage" parameterType="Message">
+		update message set messageboard=#{messageboard} where messageid=#{messageid}
+
+	</update>
+
+
+	<!-- <insert id="addNewUser" parameterType="Users"> insert into users(coachname,coachprice,coachimgpath) 
+		values(#{username},#{userpasswd}) </insert> -->
+
+</mapper>
